@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <title>StudentListApp</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Student Management MiniApp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container mt-3">
+    <h1>Student Management</h1>
+    <h1>MiniApp</h1>
+    <hr size="5">
+    <div class="row pt-4">
+      <div class="col-6">
+        <h4>Add Student</h4>
+        
+          <button onclick="FungsiShow()" type="button" class="btn btn-primary"> Show form add student
+          </button>
+          <div id="target">
+            <div class="mb-3">
+              <label>Student ID (NIM)</label> <br>
+              <input type="text" name="studentId" id="student-id" placeholder="119100000000">
+            </div>
+            <div class="mb-3">
+              <label>Full Name</label> <br>
+              <input type="text" name="fullName" id="full-name" placeholder="John Doe">
+            </div>
+              <div class="mb-3">
+                <label>Gender</label>
+                <p><input type="radio" name="gender" id="gender" value="He/Him">He/Him</p>
+                <p><input type="radio" name="gender" id="gender" value="She/Her">She/Her</p>
+                <p><input type="radio" name="gender" id="gender" value="They/Them">They/Them</p>
+                <p><input type="radio" name="gender" id="gender" value="Prefer">Prefer not to say</p>
+              </div>
+            <form>
+              <fieldset >
+                <div class="mb-3">
+                  <label>Faculty</label> <br>
+                  <select name="facultyName" id="faculty-name"> 
+                  <option selected>SELECT FACULTY</option>
+                  <option value="1">Fakultas Filsafat</option>
+                  <option value="2">Fakultas Keguruan dan Ilmu Pendidikan</option>
+                  <option value="3">Fakultas Ekonomi dan Bisnis</option>
+                  <option value="4">Fakultas Pertanian</option>
+                  <option value="5">Fakultas Ilmu Komputer</option>
+                  <option value="6">Fakultas Keperawatan</option>
+                  <option value="7">Akademi Sekretari Manajemen Indonesia Klabat</option>
+                  <option value="8">Pasjasarjana</option>
+                  </select>
+              <br> <br>
+                  <label>Program of Study</label> <br>
+                  <select name="programStudy" id="program-study">
+                  <option selected>SELECT PROGRAM OF STUDY</option>
+                  <option value="1">Profesi Ners</option>
+                  <option value="2">Keperawatan</option>
+                  <option value="3">Pendidikan Agama</option>
+                  <option value="4">Pendidikan Bahasa Inggris</option>
+                  <option value="5">Informatika</option>
+                  <option value="6">Sistem Informasi</option>
+                  <option value="7">Agroteknologi</option>
+                  <option value="8">Sekretari(D3)</option>
+                  <option value="7">Akuntansi</option>
+                  <option value="8">Manajemen</option>
+                  <option value="7">Ilmu Filsafat</option>
+                  <option value="8">Pendidikan Luar Sekolah</option>
+                  </select>
+              <br> <br>
+                <input type="submit" value="Add Student">
+              </fieldset>
+            </form>
+          </div> 
+      </div>
+
+      <div class="col-4">
+        <h4>Filter Students By</h4>
+        <p>Faculty</p>
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+          <option selected>SELECT FACULTY</option>
+                  <option value="1">Fakultas Filsafat</option>
+                  <option value="2">Fakultas Keguruan dan Ilmu Pendidikan</option>
+                  <option value="3">Fakultas Ekonomi dan Bisnis</option>
+                  <option value="4">Fakultas Pertanian</option>
+                  <option value="5">Fakultas Ilmu Komputer</option>
+                  <option value="6">Fakultas Keperawatan</option>
+                  <option value="7">Akademi Sekretari Manajemen Indonesia Klabat</option>
+                  <option value="8">Pasjasarjana</option>
+        </select>
+        <br>
+        <button type="button" onclick='' class="btn btn-primary">Show Student</button>
+        <br>
+        <br>
+        <p>Program of Study</p>
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+          <option selected>SELECT PROGRAM OF STUDY</option>
+                  <option value="1">Profesi Ners</option>
+                  <option value="2">Keperawatan</option>
+                  <option value="3">Pendidikan Agama</option>
+                  <option value="4">Pendidikan Bahasa Inggris</option>
+                  <option value="5">Informatika</option>
+                  <option value="6">Sistem Informasi</option>
+                  <option value="7">Agroteknologi</option>
+                  <option value="8">Sekretari(D3)</option>
+                  <option value="7">Akuntansi</option>
+                  <option value="8">Manajemen</option>
+                  <option value="7">Ilmu Filsafat</option>
+                  <option value="8">Pendidikan Luar Sekolah</option>
+        </select>
+        <br>
+        <button type="button" onclick='' class="btn btn-primary">Show Student</button>
+      </div>
+    </div>
+    <hr>
+    
+    <div class="row pt-4 mt-4">
+      <table>
+        <h1 class="text-center">Our Students</h1>
+        <label></label> <input type="text" id="search" placeholder="Search student by name"> 
+          <tr id="dataDiri">
+            <td class="table-data">Student ID (NIM)</td>
+            <td class="table-data">Full Name</td>
+            <td class="table-data">Gender</td>
+            <td class="table-data">Faculty</td>
+            <td class="table-data">Program Study</td>
+            <td class="table-data">Action</td>
+          </tr>
+          <tr>
+            <td>105011910048</td>
+            <td>Jerushalem Jehuda Kowaas</td>
+            <td>He/Him</td>
+            <td>FIK</td>
+            <td>Sistem Informasi</td>
+            <td><a href="#" class="link-danger"><i class="bi bi-trash"></i></a></td>
+          </tr>
+          <tr>
+            <td>105011910001</td>
+            <td>Kim Jisoo</td>
+            <td>She/Her</td>
+            <td>FEB</td>
+            <td>Manajemen</td>
+            <td><a href="#" class="link-danger"><i class="bi bi-trash"></i></a></td>
+          </tr>
+      </table>
+    </div>
+  </div>
+<br> 
+  <footer class="py-4">
+    <hr>
+    <p class="text-center text-uppercase">&copy; 2021 by JEHUDA KOWAAS</p>
+  </footer>
+  <script src="mid.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>
